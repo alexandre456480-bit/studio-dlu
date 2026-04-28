@@ -129,12 +129,15 @@ img {
   0% {
     transform: translate(0, 0) scale(1);
   }
+
   33% {
     transform: translate(30px, -50px) scale(1.1);
   }
+
   66% {
     transform: translate(-20px, 20px) scale(0.9);
   }
+
   100% {
     transform: translate(0, 0) scale(1);
   }
@@ -154,8 +157,10 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 clamp(2.5rem, 4vw, 4rem); /* Logo mais para a direita usando padding maior na esquerda */
-  background: rgba(55, 182, 17, 0.02); /* Transparente / Glass */
+  padding: 0 clamp(2.5rem, 4vw, 4rem);
+  /* Logo mais para a direita usando padding maior na esquerda */
+  background: rgba(55, 182, 17, 0.02);
+  /* Transparente / Glass */
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
@@ -167,7 +172,8 @@ img {
   left: 0;
   width: 100%;
   border-radius: 0;
-  background: rgba(44, 42, 38, 0.85); /* Dark background on scroll as before */
+  background: rgba(44, 42, 38, 0.85);
+  /* Dark background on scroll as before */
   backdrop-filter: blur(20px) saturate(1.4);
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
@@ -177,7 +183,8 @@ img {
 .nav-logo {
   height: 62px;
   width: auto;
-  margin-left: 1.8rem; /* Logo mais para a direita */
+  margin-left: 1.8rem;
+  /* Logo mais para a direita */
   transition: transform 0.4s var(--transition-smooth);
   /* Aumenta a logo visualmente sem afetar a altura da navbar */
   transform: scale(1.9);
@@ -699,35 +706,79 @@ section {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--white);
-  background: linear-gradient(135deg, var(--olive-dark), #7d7f52);
+  background: linear-gradient(135deg, var(--olive-dark), #7d7f52, #8a8c5a);
+  background-size: 200% 200%;
   padding: 0.9rem 2rem;
   border-radius: 50px;
   border: none;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: transform 0.4s var(--transition-smooth),
-    box-shadow 0.4s var(--transition-smooth);
+  box-shadow:
+    0 4px 15px rgba(107, 109, 67, 0.4),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.35s var(--transition-smooth),
+    box-shadow 0.35s var(--transition-smooth),
+    background-position 0.5s ease;
+  animation: btnGlow 3s ease-in-out infinite;
 }
 
+@keyframes btnGlow {
+  0%, 100% {
+    box-shadow:
+      0 4px 15px rgba(107, 109, 67, 0.4),
+      0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 6px 25px rgba(107, 109, 67, 0.55),
+      0 0 40px rgba(107, 109, 67, 0.15),
+      0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Shimmer sweep */
 .btn-primary::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.15));
-  opacity: 0;
-  transition: opacity 0.35s ease;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  transition: none;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  30% { left: 100%; }
+  100% { left: 100%; }
 }
 
 .btn-primary:hover {
-  transform: translateY(-4px) scale(1.03);
+  transform: translateY(-4px) scale(1.04);
+  background-position: 100% 0;
   box-shadow:
-    0 12px 40px rgba(107, 109, 67, 0.5),
-    0 0 60px rgba(107, 109, 67, 0.2);
+    0 14px 45px rgba(107, 109, 67, 0.55),
+    0 0 60px rgba(107, 109, 67, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow:
+    0 4px 12px rgba(107, 109, 67, 0.4);
 }
 
 .btn-primary:hover::before {
-  opacity: 1;
+  animation: none;
+  left: 100%;
 }
 
 .btn-secondary {
@@ -775,22 +826,22 @@ section {
   font-size: 2rem;
   text-decoration: none;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  animation: spin360 8s linear infinite;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: spin3D 6s linear infinite;
+  transform-style: preserve-3d;
+  transition: box-shadow 0.3s ease;
 }
 
 .whatsapp-cream:hover {
-  transform: scale(1.1);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
   animation-play-state: paused;
 }
 
-@keyframes spin360 {
+@keyframes spin3D {
   0% {
-    transform: rotate(0deg);
+    transform: perspective(400px) rotateY(0deg);
   }
   100% {
-    transform: rotate(-360deg);
+    transform: perspective(400px) rotateY(360deg);
   }
 }
 
@@ -1004,7 +1055,8 @@ section {
   line-height: 0;
   font-size: 0;
   overflow: hidden;
-  transform: translateY(1px); /* Prevent 1px gap bug */
+  transform: translateY(1px);
+  /* Prevent 1px gap bug */
 }
 
 .divider svg {
@@ -1164,45 +1216,45 @@ section {
 /* Stagger: cada filho entra com delay crescente */
 .serv-desc-slide>* {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.9s cubic-bezier(0.23, 1, 0.32, 1),
-    transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out,
+    transform 0.5s ease-out;
 }
 
 .serv-desc-slide.active>*:nth-child(1) {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 0.1s;
+  transition-delay: 0.05s;
 }
 
 .serv-desc-slide.active>*:nth-child(2) {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 0.25s;
+  transition-delay: 0.1s;
 }
 
 .serv-desc-slide.active>*:nth-child(3) {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 0.4s;
+  transition-delay: 0.15s;
 }
 
 .serv-desc-slide.active>*:nth-child(4) {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 0.55s;
+  transition-delay: 0.2s;
 }
 
 .serv-desc-slide.active>*:nth-child(5) {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 0.7s;
+  transition-delay: 0.25s;
 }
 
 .serv-desc-slide.active>*:nth-child(6) {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 0.85s;
+  transition-delay: 0.3s;
 }
 
 .serv-desc-slide .section-badge {
@@ -1214,7 +1266,8 @@ section {
   font-family: var(--font-display);
   font-size: clamp(4rem, 7vw, 6rem);
   font-weight: 300;
-  color: rgba(225, 184, 162, 0.3); /* nude-pink transparent */
+  color: rgba(225, 184, 162, 0.3);
+  /* nude-pink transparent */
   line-height: 1;
   display: block;
   margin-bottom: -1rem;
@@ -1825,8 +1878,17 @@ section {
 }
 
 @keyframes logoBreath {
-  0%, 100% { transform: scale(1); filter: drop-shadow(0 8px 24px rgba(207, 125, 101, 0.18)); }
-  50% { transform: scale(1.04); filter: drop-shadow(0 12px 32px rgba(207, 125, 101, 0.28)); }
+
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 8px 24px rgba(207, 125, 101, 0.18));
+  }
+
+  50% {
+    transform: scale(1.04);
+    filter: drop-shadow(0 12px 32px rgba(207, 125, 101, 0.28));
+  }
 }
 
 /* --- Layout Grid --- */
@@ -2000,7 +2062,7 @@ section {
   margin-top: 0.5rem;
 }
 
-.sobre-location > i {
+.sobre-location>i {
   font-size: 1.1rem;
   color: var(--rose-terracotta);
   margin-top: 2px;
@@ -2188,8 +2250,13 @@ section {
 }
 
 /* Verde e Rosa sólidos como pedido */
-.btn-neon--whatsapp i { color: #25D366; }
-.btn-neon--instagram i { color: #E1306C; }
+.btn-neon--whatsapp i {
+  color: #25D366;
+}
+
+.btn-neon--instagram i {
+  color: #E1306C;
+}
 
 .btn-neon-text strong {
   display: block;
@@ -2220,8 +2287,13 @@ section {
   filter: blur(20px);
 }
 
-.btn-neon--whatsapp .btn-neon-glow { background: #25D366; }
-.btn-neon--instagram .btn-neon-glow { background: #E1306C; }
+.btn-neon--whatsapp .btn-neon-glow {
+  background: #25D366;
+}
+
+.btn-neon--instagram .btn-neon-glow {
+  background: #E1306C;
+}
 
 .btn-neon:hover {
   transform: translateY(-5px);
@@ -2366,7 +2438,8 @@ section {
   max-width: 320px;
 }
 
-.footer-links h4, .footer-social h4 {
+.footer-links h4,
+.footer-social h4 {
   color: var(--white);
   font-size: 1.15rem;
   margin-bottom: 1.5rem;
@@ -2423,6 +2496,7 @@ section {
 }
 
 @media (max-width: 992px) {
+
   /* --- Navbar Mobile --- */
   .nav-hamburger {
     display: flex;
@@ -2590,7 +2664,7 @@ section {
   .contato-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .contato-map {
     height: 350px;
   }

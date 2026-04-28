@@ -96,8 +96,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Icons (Asynchronous load to prevent render blocking) -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+
+  <!-- Preload LCP Images (Hero Desktop e Mobile) -->
+  <link rel="preload" as="image" href="hero/h1.webp" media="(min-width: 769px)">
+  <link rel="preload" as="image" href="hero/m1.webp" media="(max-width: 768px)">
 
   <!-- Preload Critical CSS/JS -->
   <link rel="preload" href="style.css" as="style">
@@ -260,7 +265,6 @@
       <div class="serv-desc-area">
         <div class="serv-desc-slide active" data-desc="0">
           <span class="section-badge"><i class="fa-solid fa-spa"></i> Nossos Serviços</span>
-          <span class="serv-num">01</span>
           <h2 class="serv-desc-title">Estética <em>Facial</em></h2>
           <p class="serv-desc-text">Tratamentos de estética facial com alta performance que unem tecnologia avançada e técnicas manuais especializadas para revitalizar a pele, uniformizar o tom e devolver luminosidade natural. Resultados visíveis desde a primeira sessão, com protocolos seguros que elevam sua autoestima e realçam sua belezao.</p>
           <ul class="serv-desc-list">
@@ -275,7 +279,6 @@
         </div>
         <div class="serv-desc-slide" data-desc="1">
           <span class="section-badge"><i class="fa-solid fa-spa"></i> Nossos Serviços</span>
-          <span class="serv-num">02</span>
           <h2 class="serv-desc-title">Massagens <em>Terapêuticas</em></h2>
           <p class="serv-desc-text">Sessões de massagens terapêuticas e modeladoras que vão além do relaxamento, combinando técnicas especializadas para aliviar dores musculares, reduzir medidas e devolver leveza ao corpo. Resultados comprovados que promovem bem-estar, equilíbrio e mais qualidade de vida.</p>
           <ul class="serv-desc-list">
@@ -356,9 +359,9 @@
       <div class="mural-item mural-pair" data-tipo="par" style="--x:3%; --y:5%; --rot:-7deg;" data-aos="zoom-in"
         data-aos-delay="50">
         <div class="mural-images">
-          <div class="img-wrap"><img src="imagens/a1.webp" alt="Antes - Massagem Modeladora" loading="lazy"><span
+          <div class="img-wrap"><img src="imagens/a1.webp" alt="Antes - Massagem Modeladora" width="300" height="350" loading="lazy"><span
               class="mural-tag">Antes</span></div>
-          <div class="img-wrap"><img src="imagens/d1.webp" alt="Depois - Massagem Modeladora" loading="lazy"><span
+          <div class="img-wrap"><img src="imagens/d1.webp" alt="Depois - Massagem Modeladora" width="300" height="350" loading="lazy"><span
               class="mural-tag depois">Depois</span></div>
         </div>
         <div class="mural-info">
@@ -373,9 +376,9 @@
       <div class="mural-item mural-pair" data-tipo="par" style="--x:60%; --y:2%; --rot:5deg;" data-aos="zoom-in"
         data-aos-delay="150">
         <div class="mural-images">
-          <div class="img-wrap"><img src="imagens/a2.webp" alt="Antes - Drenagem Linfática" loading="lazy"><span
+          <div class="img-wrap"><img src="imagens/a2.webp" alt="Antes - Drenagem Linfática" width="300" height="350" loading="lazy"><span
               class="mural-tag">Antes</span></div>
-          <div class="img-wrap"><img src="imagens/d2.webp" alt="Depois - Drenagem Linfática" loading="lazy"><span
+          <div class="img-wrap"><img src="imagens/d2.webp" alt="Depois - Drenagem Linfática" width="300" height="350" loading="lazy"><span
               class="mural-tag depois">Depois</span></div>
         </div>
         <div class="mural-info">
@@ -389,9 +392,9 @@
       <div class="mural-item mural-pair" data-tipo="par" style="--x:30%; --y:52%; --rot:-4deg;" data-aos="zoom-in"
         data-aos-delay="250">
         <div class="mural-images">
-          <div class="img-wrap"><img src="imagens/a3.webp" alt="Antes - Estética Facial" loading="lazy"><span
+          <div class="img-wrap"><img src="imagens/a3.webp" alt="Antes - Estética Facial" width="300" height="350" loading="lazy"><span
               class="mural-tag">Antes</span></div>
-          <div class="img-wrap"><img src="imagens/d3.webp" alt="Depois - Estética Facial" loading="lazy"><span
+          <div class="img-wrap"><img src="imagens/d3.webp" alt="Depois - Estética Facial" width="300" height="350" loading="lazy"><span
               class="mural-tag depois">Depois</span></div>
         </div>
         <div class="mural-info">
@@ -405,7 +408,7 @@
       <div class="mural-item mural-solo" data-tipo="solo" style="--x:70%; --y:48%; --rot:8deg;" data-aos="zoom-in"
         data-aos-delay="350">
         <div class="mural-images">
-          <div class="img-wrap"><img src="imagens/c.webp" alt="Nosso Espaço" loading="lazy"></div>
+          <div class="img-wrap"><img src="imagens/c.webp" alt="Nosso Espaço" width="400" height="250" loading="lazy"></div>
         </div>
         <div class="mural-info">
           <span class="mural-servico">Massagem Terapêutica</span>
@@ -418,7 +421,7 @@
       <div class="mural-item mural-solo" data-tipo="solo" style="--x:5%; --y:55%; --rot:-10deg;" data-aos="zoom-in"
         data-aos-delay="400">
         <div class="mural-images">
-          <div class="img-wrap"><img src="imagens/r.webp" alt="Resultado Real" loading="lazy"></div>
+          <div class="img-wrap"><img src="imagens/r.webp" alt="Resultado Real" width="400" height="250" loading="lazy"></div>
         </div>
         <div class="mural-info">
           <span class="mural-servico">Clareamento Facial</span>
@@ -463,7 +466,7 @@
         <h2 class="section-title">Conheça a <em>Luciane</em></h2>
         <!-- Logo de destaque -->
         <div class="sobre-logo" data-aos="zoom-in" data-aos-delay="200">
-          <img src="logo.webp" alt="Logo Studio D'LÚ" loading="lazy">
+          <img src="logo.webp" alt="Logo Studio D'LÚ" width="200" height="71" loading="lazy">
         </div>
       </div>
 
@@ -474,21 +477,21 @@
         <div class="sobre-gallery" data-aos="fade-right" data-aos-delay="100">
           <div class="gallery-col gallery-col--left">
             <div class="gallery-card" data-aos="zoom-in" data-aos-delay="150">
-              <img src="imagens/2.webp" alt="Certificados profissionais da Luciane" loading="lazy">
+              <img src="imagens/2.webp" alt="Certificados profissionais da Luciane" width="300" height="400" loading="lazy">
               <div class="gallery-card-label"><i class="fa-solid fa-award"></i> Certificações</div>
             </div>
             <div class="gallery-card" data-aos="zoom-in" data-aos-delay="300">
-              <img src="imagens/1.webp" alt="Equipamento LipoFocus profissional" loading="lazy">
+              <img src="imagens/1.webp" alt="Equipamento LipoFocus profissional" width="300" height="400" loading="lazy">
               <div class="gallery-card-label"><i class="fa-solid fa-microscope"></i> Tecnologia</div>
             </div>
           </div>
           <div class="gallery-col gallery-col--right">
             <div class="gallery-card" data-aos="zoom-in" data-aos-delay="200">
-              <img src="imagens/4.webp" alt="Sala de atendimento" loading="lazy">
+              <img src="imagens/4.webp" alt="Sala de atendimento" width="300" height="400" loading="lazy">
               <div class="gallery-card-label"><i class="fa-solid fa-couch"></i> Ambiente</div>
             </div>
             <div class="gallery-card" data-aos="zoom-in" data-aos-delay="350">
-              <img src="imagens/3.webp" alt="Maca e ambiente acolhedor" loading="lazy">
+              <img src="imagens/3.webp" alt="Maca e ambiente acolhedor" width="300" height="400" loading="lazy">
               <div class="gallery-card-label"><i class="fa-solid fa-spa"></i> Conforto</div>
             </div>
           </div>
@@ -641,7 +644,7 @@ Acredito que cada corpo conta uma história — e merece um cuidado profissional
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-brand">
-        <img src="logo.webp" alt="Studio D'LÚ Logo" class="footer-logo">
+        <img src="logo.webp" alt="Studio D'LÚ Logo" class="footer-logo" width="180" height="64">
         <p>Especialistas em realçar sua beleza natural com cuidado, tecnologia e acolhimento.</p>
       </div>
 
