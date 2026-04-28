@@ -732,11 +732,39 @@
   .pg-stats-bar {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .pg-section {
+    padding: clamp(3rem, 6vw, 5rem) 0 clamp(5rem, 10vw, 8rem);
+  }
+
+  .page-hero-content {
+    padding: 3rem 1.5rem 2.5rem;
+  }
 }
 
 @media (max-width: 600px) {
   .page-hero {
-    min-height: 45vh;
+    min-height: 40vh;
+  }
+
+  .page-hero-title {
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+
+  .page-hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .page-hero-content {
+    padding: 2.5rem 1.2rem 2rem;
+  }
+
+  .pg-container {
+    padding: 0 clamp(1rem, 3vw, 2rem);
+  }
+
+  .pg-center-header {
+    margin-bottom: 2.5rem;
   }
 
   .pg-cert-grid,
@@ -748,16 +776,107 @@
     grid-template-columns: 1fr;
   }
 
+  .pg-cert-photo img {
+    height: 200px;
+  }
+
+  .pg-cert-card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .pg-diff-card {
+    padding: 1.5rem 1.2rem;
+  }
+
   .pg-stats-bar {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .pg-stat-item {
+    padding: 1.3rem 0.8rem;
+  }
+
+  .pg-stat-number {
+    font-size: 2rem;
   }
 
   .pg-result-images {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .pg-result-before img,
   .pg-result-after img {
-    height: 180px;
+    height: 160px;
+  }
+
+  .pg-result-info {
+    padding: 1.2rem;
+  }
+
+  .pg-result-info h3 {
+    font-size: 1.05rem;
+  }
+
+  .pg-result-info p {
+    font-size: 0.82rem;
+  }
+
+  /* Testimonials */
+  .pg-testimonial {
+    padding: 1.5rem;
+  }
+
+  .pg-testimonial p {
+    font-size: 0.85rem;
+  }
+
+  /* CTA */
+  .pg-cta-box h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .pg-cta-box p {
+    font-size: 0.9rem;
+  }
+
+  .pg-cta-box .btn-primary {
+    font-size: 0.9rem;
+    padding: 0.9rem 2rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Service split */
+  .pg-split__text p {
+    font-size: 0.9rem;
+  }
+
+  .pg-service-num {
+    font-size: 2.5rem;
+  }
+
+  .pg-service-list li {
+    font-size: 0.85rem;
+  }
+
+  .pg-image-frame {
+    border-radius: 18px;
+    border-width: 3px;
+  }
+
+  .pg-float-badge {
+    font-size: 0.7rem;
+    padding: 0.6rem 1.2rem;
+    bottom: -10px;
+    right: 10px;
+  }
+
+  .pg-highlight-box {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .pg-highlight-box p {
+    font-size: 1rem;
   }
 }

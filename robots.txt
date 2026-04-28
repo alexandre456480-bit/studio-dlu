@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Sitemap: https://studiodlu.com.br/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /imagens/
+Allow: /hero/
+Allow: /logo.webp
+Allow: /logo2.webp

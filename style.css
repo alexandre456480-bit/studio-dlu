@@ -259,6 +259,10 @@ img {
   cursor: pointer;
   z-index: 1100;
   padding: 5px;
+  background: none;
+  border: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .nav-hamburger span {
@@ -297,6 +301,7 @@ section {
   position: relative;
   width: 100%;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -330,7 +335,14 @@ section {
   clip-path: inset(0 0 0 0) !important;
 }
 
-.hero-bg-slide img {
+.hero-bg-slide img,
+.hero-bg-slide picture {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-bg-slide picture img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -778,7 +790,7 @@ section {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
   }
 }
 
@@ -858,6 +870,7 @@ section {
     right: -100%;
     width: 300px;
     height: 100vh;
+    height: 100dvh;
     background: rgba(44, 42, 38, 0.95);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
@@ -879,9 +892,41 @@ section {
   .hero-glass {
     max-width: 100%;
   }
+
+  .hero-content {
+    padding: 0 clamp(1rem, 4vw, 2rem);
+    padding-top: var(--nav-height);
+  }
 }
 
 @media (max-width: 600px) {
+  :root {
+    --nav-height: 65px;
+  }
+
+  .navbar {
+    top: 8px;
+    left: 10px;
+    width: calc(100% - 20px);
+    border-radius: 14px;
+    padding: 0 1rem;
+    height: var(--nav-height);
+  }
+
+  .navbar.scrolled {
+    padding: 0 1rem;
+  }
+
+  .nav-logo {
+    height: 45px;
+    margin-left: 0.5rem;
+    transform: scale(1.5);
+  }
+
+  .nav-logo:hover {
+    transform: scale(1.55);
+  }
+
   .hero-title {
     font-size: clamp(2rem, 8vw, 2.8rem);
   }
@@ -891,25 +936,58 @@ section {
     border-radius: 18px;
   }
 
+  .hero-description {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-services {
+    gap: 0.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-service-tag {
+    font-size: 0.62rem;
+    padding: 0.3rem 0.7rem;
+  }
+
   .hero-cta-group {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.8rem;
   }
 
-  .whatsapp-float {
-    width: 52px;
-    height: 52px;
-    bottom: 1.2rem;
-    right: 1.2rem;
+  .btn-primary {
+    font-size: 0.78rem;
+    padding: 0.8rem 1.6rem;
+    width: 100%;
+    justify-content: center;
   }
 
-  .whatsapp-float svg {
-    width: 26px;
-    height: 26px;
+  .btn-secondary {
+    font-size: 0.75rem;
   }
 
   .hero-indicators {
     bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+
+  .section-subtitle {
+    font-size: 0.88rem;
+  }
+
+  /* WhatsApp Float */
+  .whatsapp-cream {
+    width: 54px;
+    height: 54px;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    font-size: 1.7rem;
   }
 }
 
@@ -2344,9 +2422,6 @@ section {
   font-size: 0.85rem;
 }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
 @media (max-width: 992px) {
   /* --- Navbar Mobile --- */
   .nav-hamburger {
@@ -2359,6 +2434,7 @@ section {
     left: 0;
     width: 100%;
     height: 100vh;
+    height: 100dvh;
     background: rgba(44, 42, 38, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -2388,30 +2464,62 @@ section {
     flex-direction: column-reverse;
     text-align: center;
     padding-top: 7rem;
+    padding-bottom: 5rem;
   }
 
   .serv-desc-area {
     max-width: 100%;
-    min-height: 420px;
+    min-height: auto;
+    position: relative;
   }
 
   .serv-desc-slide {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    top: auto;
+    left: auto;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .serv-desc-slide.active {
+    display: flex;
   }
 
   .serv-desc-text {
     max-width: 100%;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .serv-desc-list {
     align-items: center;
   }
 
+  .serv-desc-list li {
+    font-size: 0.85rem;
+  }
+
   .serv-card-carousel {
-    width: 320px;
-    height: 420px;
+    width: 300px;
+    height: 400px;
+  }
+
+  .serv-carousel-card-label {
+    padding: 0.8rem 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+  }
+
+  .serv-carousel-card-label span {
+    font-size: 1.1rem;
   }
 
   /* Mural: empilhar verticalmente */
@@ -2484,27 +2592,46 @@ section {
   }
   
   .contato-map {
-    height: 400px;
+    height: 350px;
   }
 
   .footer-container {
     grid-template-columns: 1fr;
     gap: 2rem;
+    text-align: center;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-brand p {
+    max-width: 100%;
+  }
+
+  .social-icons {
+    justify-content: center;
   }
 }
 
 @media (max-width: 600px) {
   .serv-card-carousel {
-    width: 280px;
-    height: 380px;
+    width: 260px;
+    height: 350px;
   }
 
   .serv-desc-area {
-    min-height: 380px;
+    min-height: auto;
+  }
+
+  .serv-desc-title {
+    font-size: clamp(1.6rem, 5vw, 2rem);
   }
 
   .serv-num {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .mural-images {
@@ -2534,17 +2661,63 @@ section {
     margin-bottom: 0;
   }
 
-  /* Contato & Footer */
+  .sobre-glass {
+    padding: 1.5rem;
+  }
+
+  .sobre-bio {
+    font-size: 0.85rem;
+  }
+
+  /* Contato */
+  .contato {
+    padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 3vw, 2rem);
+  }
+
+  .contato-map {
+    height: 280px;
+  }
+
+  .btn-neon {
+    padding: 1rem 1.2rem;
+    border-radius: 16px;
+  }
+
   .btn-neon-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
+    flex-direction: row;
+    text-align: left;
+    gap: 1rem;
     width: 100%;
+  }
+
+  .btn-neon i {
+    font-size: 1.8rem;
+  }
+
+  .btn-neon-text strong {
+    font-size: 0.95rem;
+  }
+
+  .btn-neon-text span {
+    font-size: 0.78rem;
+  }
+
+  .contato-info-card {
+    padding: 1.2rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 3rem 1.5rem 1.5rem;
   }
 
   .footer-bottom {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+  }
+
+  .footer-logo {
+    height: 55px;
   }
 }
