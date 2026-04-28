@@ -164,7 +164,7 @@ img {
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-  transition: all 0.5s var(--transition-smooth);
+  transition: opacity 0.5s var(--transition-smooth), transform 0.5s var(--transition-smooth), background-color 0.5s var(--transition-smooth), box-shadow 0.5s var(--transition-smooth);
 }
 
 .navbar.scrolled {
@@ -531,7 +531,7 @@ section {
   background: rgba(255, 255, 255, 0.35);
   border-radius: 3px;
   cursor: pointer;
-  transition: all 0.5s var(--transition-smooth);
+  transition: opacity 0.5s var(--transition-smooth), transform 0.5s var(--transition-smooth), background-color 0.5s var(--transition-smooth), box-shadow 0.5s var(--transition-smooth);
   position: relative;
   overflow: hidden;
 }
@@ -679,7 +679,7 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0.35rem 0.85rem;
   border-radius: 50px;
-  transition: all 0.35s var(--transition-smooth);
+  transition: opacity 0.35s var(--transition-smooth), transform 0.35s var(--transition-smooth), background-color 0.35s var(--transition-smooth), box-shadow 0.35s var(--transition-smooth);
 }
 
 .hero-service-tag:hover {
@@ -878,37 +878,37 @@ section {
 .hero-glass.animated .hero-badge {
   opacity: 1;
   transform: translateY(0);
-  transition: all 0.7s 0.3s var(--transition-smooth);
+  transition: opacity 0.7s 0.3s var(--transition-smooth), transform 0.7s 0.3s var(--transition-smooth), background-color 0.7s 0.3s var(--transition-smooth), box-shadow 0.7s 0.3s var(--transition-smooth);
 }
 
 .hero-glass.animated .hero-title {
   opacity: 1;
   transform: translateY(0);
-  transition: all 0.8s 0.5s var(--transition-smooth);
+  transition: opacity 0.8s 0.5s var(--transition-smooth), transform 0.8s 0.5s var(--transition-smooth), background-color 0.8s 0.5s var(--transition-smooth), box-shadow 0.8s 0.5s var(--transition-smooth);
 }
 
 .hero-glass.animated .hero-separator {
   opacity: 1;
   transform: scaleX(1);
-  transition: all 0.6s 0.8s var(--transition-smooth);
+  transition: opacity 0.6s 0.8s var(--transition-smooth), transform 0.6s 0.8s var(--transition-smooth), background-color 0.6s 0.8s var(--transition-smooth), box-shadow 0.6s 0.8s var(--transition-smooth);
 }
 
 .hero-glass.animated .hero-description {
   opacity: 1;
   transform: translateY(0);
-  transition: all 0.7s 1s var(--transition-smooth);
+  transition: opacity 0.7s 1s var(--transition-smooth), transform 0.7s 1s var(--transition-smooth), background-color 0.7s 1s var(--transition-smooth), box-shadow 0.7s 1s var(--transition-smooth);
 }
 
 .hero-glass.animated .hero-services {
   opacity: 1;
   transform: translateY(0);
-  transition: all 0.7s 1.2s var(--transition-smooth);
+  transition: opacity 0.7s 1.2s var(--transition-smooth), transform 0.7s 1.2s var(--transition-smooth), background-color 0.7s 1.2s var(--transition-smooth), box-shadow 0.7s 1.2s var(--transition-smooth);
 }
 
 .hero-glass.animated .hero-cta-group {
   opacity: 1;
   transform: translateY(0);
-  transition: all 0.7s 1.4s var(--transition-smooth);
+  transition: opacity 0.7s 1.4s var(--transition-smooth), transform 0.7s 1.4s var(--transition-smooth), background-color 0.7s 1.4s var(--transition-smooth), box-shadow 0.7s 1.4s var(--transition-smooth);
 }
 
 /* ============================================
@@ -1469,7 +1469,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.35s var(--transition-smooth);
+  transition: opacity 0.35s var(--transition-smooth), transform 0.35s var(--transition-smooth), background-color 0.35s var(--transition-smooth), box-shadow 0.35s var(--transition-smooth);
   box-shadow: 0 4px 15px rgba(207, 125, 101, 0.1);
 }
 
@@ -1492,7 +1492,7 @@ section {
   border-radius: 50%;
   background: rgba(207, 125, 101, 0.2);
   cursor: pointer;
-  transition: all 0.4s var(--transition-smooth);
+  transition: opacity 0.4s var(--transition-smooth), transform 0.4s var(--transition-smooth), background-color 0.4s var(--transition-smooth), box-shadow 0.4s var(--transition-smooth);
 }
 
 .serv-dot.active {
@@ -1594,7 +1594,7 @@ section {
   left: var(--x);
   top: var(--y);
   transform: rotate(var(--rot)) scale(1);
-  transition: all 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.65s cubic-bezier(0.23, 1, 0.32, 1), transform 0.65s cubic-bezier(0.23, 1, 0.32, 1), background-color 0.65s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.65s cubic-bezier(0.23, 1, 0.32, 1);
   cursor: pointer;
   z-index: 1;
   border-radius: 16px;
@@ -1742,7 +1742,7 @@ section {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.1s;
+  transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.1s, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.1s, background-color 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.1s, box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.1s;
 }
 
 .mural-item.active .mural-info {
@@ -1976,7 +1976,7 @@ section {
   border: 1px solid rgba(255, 255, 255, 0.1);
   opacity: 0;
   transform: translateY(8px);
-  transition: all 0.4s var(--transition-smooth);
+  transition: opacity 0.4s var(--transition-smooth), transform 0.4s var(--transition-smooth), background-color 0.4s var(--transition-smooth), box-shadow 0.4s var(--transition-smooth);
 }
 
 .gallery-card:hover .gallery-card-label {
@@ -2101,7 +2101,7 @@ section {
   border: 1px solid rgba(225, 184, 162, 0.2);
   border-radius: 18px;
   padding: 1.3rem 0.8rem;
-  transition: all 0.4s var(--transition-smooth);
+  transition: opacity 0.4s var(--transition-smooth), transform 0.4s var(--transition-smooth), background-color 0.4s var(--transition-smooth), box-shadow 0.4s var(--transition-smooth);
   box-shadow: 0 4px 16px rgba(44, 42, 38, 0.04);
 }
 
@@ -2232,7 +2232,7 @@ section {
   background: var(--white);
   border: 1px solid rgba(255, 255, 255, 0.5);
   overflow: hidden;
-  transition: all 0.4s var(--transition-smooth);
+  transition: opacity 0.4s var(--transition-smooth), transform 0.4s var(--transition-smooth), background-color 0.4s var(--transition-smooth), box-shadow 0.4s var(--transition-smooth);
   box-shadow: 0 4px 15px rgba(207, 125, 101, 0.1);
 }
 
@@ -2477,7 +2477,7 @@ section {
   border-radius: 50%;
   color: var(--white);
   font-size: 1.1rem;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .social-icons a:hover {
