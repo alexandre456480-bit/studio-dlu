@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio D'Lú | Estética Avançada e Pós-Operatório em Goiânia</title>
+  <link rel="icon" type="image/webp" href="logo2.webp">
+  <meta name="description" content="Studio D'Lú em Goiânia: Especialista em estética facial, massagens terapêuticas e tratamentos pós-operatórios com mais de 15 anos de experiência.">
+  <meta name="keywords" content="estética goiânia, pós-operatório, massagem terapêutica, limpeza de pele, studio dlu, luciane estética">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://studiodlu.com.br/">
+  <meta property="og:title" content="Studio D'Lú | Estética Avançada e Pós-Operatório em Goiânia">
+  <meta property="og:description" content="Studio D'Lú em Goiânia: Especialista em estética facial, massagens terapêuticas e tratamentos pós-operatórios com mais de 15 anos de experiência.">
+  <meta property="og:image" content="https://studiodlu.com.br/logo.webp">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://studiodlu.com.br/">
+  <meta property="twitter:title" content="Studio D'Lú | Estética Avançada e Pós-Operatório em Goiânia">
+  <meta property="twitter:description" content="Studio D'Lú em Goiânia: Especialista em estética facial, massagens terapêuticas e tratamentos pós-operatórios com mais de 15 anos de experiência.">
+  <meta property="twitter:image" content="https://studiodlu.com.br/logo.webp">
+
+  <link rel="canonical" href="https://studiodlu.com.br/">
+
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": "Studio D'Lú",
+    "image": "https://studiodlu.com.br/logo.webp",
+    "@id": "https://studiodlu.com.br/",
+    "url": "https://studiodlu.com.br/",
+    "telephone": "+5562996082008",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Goiânia",
+      "addressRegion": "GO",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -16.7001338,
+      "longitude": -49.3130713
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:00",
+        "closes": "16:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "07:00",
+        "closes": "12:00"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Preload Critical CSS/JS -->
+  <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
+
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" media="print" onload="this.media='all'">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Ambient Noise Overlay -->
+  <div class="ambient-noise"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <a href="#" aria-label="Studio D'LÚ - Home">
+      <img src="logo2.webp" alt="Studio D'LÚ Logo" class="nav-logo" width="140" height="50">
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="tratamentos.html">Tratamentos</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="resultados.html">Resultados</a></li>
+      <li>
+        <a href="https://wa.me/5562996082008?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20do%20Studio%20D'LÚ."
+          class="nav-cta" target="_blank" rel="noopener">
+          Fale Conosco
+        </a>
+      </li>
+    </ul>
+
+    <div class="nav-hamburger" id="navHamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="hero">
+
+    <!-- Background Carousel -->
+    <div class="hero-bg-carousel">
+      <div class="hero-bg-slide active">
+        <img src="hero/h1.webp" alt="Tratamento facial no Studio D'LÚ" class="hero-bg-img" width="1920" height="1080" fetchpriority="high" decoding="sync">
+      </div>
+      <div class="hero-bg-slide">
+        <img src="hero/h2.webp" alt="Massagem relaxante" class="hero-bg-img" width="1920" height="1080" loading="lazy" decoding="async">
+      </div>
+      <div class="hero-bg-slide">
+        <img src="hero/h3.webp" alt="Estética e beleza" class="hero-bg-img" width="1920" height="1080" loading="lazy" decoding="async">
+      </div>
+      <div class="hero-bg-slide">
+        <img src="hero/h4.webp" alt="Cuidados com a pele" class="hero-bg-img" width="1920" height="1080" loading="lazy" decoding="async">
+      </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Content -->
+    <div class="hero-content">
+      <div class="hero-glass">
+
+        <div class="hero-badge">
+          <i class="fa-solid fa-gem"></i>
+          Estética Avançada em Goiânia
+        </div>
+
+        <h1 class="hero-title">
+          Studio
+          <span>D'LÚ</span>
+        </h1>
+
+        <div class="hero-separator"></div>
+
+        <p class="hero-description">
+          O Studio D'Lú é referência em estética facial, corporal e tratamentos pós-operatórios em Goiânia.
+          Especialistas dedicados a acelerar sua recuperação e realçar sua beleza natural com resultados comprovados.
+        </p>
+
+        <div class="hero-services">
+          <span class="hero-service-tag">Pós-Operatório</span>
+          <span class="hero-service-tag">Estética Facial</span>
+          <span class="hero-service-tag">Massagens</span>
+          <span class="hero-service-tag">Drenagem</span>
+        </div>
+
+        <div class="hero-cta-group">
+          <a href="https://wa.me/5562996082008?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20no%20Studio%20D'LÚ."
+            class="btn-primary" target="_blank" rel="noopener">
+            <i class="fa-solid fa-calendar-check"></i>
+            Agendar Horário
+          </a>
+          <a href="#servicos" class="btn-secondary">
+            Nossos serviços
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Carousel Indicators -->
+    <div class="hero-indicators">
+      <div class="hero-indicator active"></div>
+      <div class="hero-indicator"></div>
+      <div class="hero-indicator"></div>
+      <div class="hero-indicator"></div>
+    </div>
+
+    <!-- ═══ Shape Divider: Hero → Serviços (Elegant Wave) ═══ -->
+    <div class="divider divider-hero-serv">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,60 C320,120 420,0 720,40 C1020,80 1120,0 1440,60 L1440,120 L0,120 Z" fill="rgba(255, 251, 247, 0.4)" />
+        <path d="M0,80 C320,140 420,20 720,60 C1020,100 1120,20 1440,80 L1440,120 L0,120 Z" fill="rgba(255, 251, 247, 0.7)" />
+        <path d="M0,100 C320,160 420,40 720,80 C1020,120 1120,40 1440,100 L1440,120 L0,120 Z" fill="#FFFBF7" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO SERVIÇOS ========== -->
+  <section class="servicos" id="servicos">
+
+    <!-- Orbs flutuantes e dinâmicos -->
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+
+    <!-- Backgrounds fullscreen (1 por serviço) -->
+    <div class="serv-backgrounds">
+      <div class="serv-bg active" data-bg="0">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1920&h=1080&fit=crop&q=80"
+          alt="Estética Facial ambiente" width="1920" height="1080">
+      </div>
+      <div class="serv-bg" data-bg="1">
+        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&h=1080&fit=crop&q=80"
+          alt="Massagens ambiente" width="1920" height="1080">
+      </div>
+      <div class="serv-bg-overlay"></div>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="serv-content">
+
+      <!-- Lado esquerdo — Descrição -->
+      <div class="serv-desc-area">
+        <div class="serv-desc-slide active" data-desc="0">
+          <span class="section-badge"><i class="fa-solid fa-spa"></i> Nossos Serviços</span>
+          <span class="serv-num">01</span>
+          <h2 class="serv-desc-title">Estética <em>Facial</em></h2>
+          <p class="serv-desc-text">Tratamentos faciais de alta performance que combinam tecnologia e técnicas manuais
+            para devolver vitalidade, uniformidade e luminosidade à sua pele. Resultados visíveis desde a primeira
+            sessão.</p>
+          <ul class="serv-desc-list">
+            <li><i class="fa-solid fa-check"></i> Limpeza de pele profunda</li>
+            <li><i class="fa-solid fa-check"></i> Tratamentos rejuvenescedores</li>
+            <li><i class="fa-solid fa-check"></i> Clareamento de Manchas e Melasma</li>
+          </ul>
+          <a href="https://wa.me/5562996082008?text=Olá!%20Gostaria%20de%20agendar%20Estética%20Facial."
+            class="btn-primary serv-agendar" target="_blank" rel="noopener">
+            <i class="fa-solid fa-calendar-check"></i> Agendar Horário
+          </a>
+        </div>
+        <div class="serv-desc-slide" data-desc="1">
+          <span class="section-badge"><i class="fa-solid fa-spa"></i> Nossos Serviços</span>
+          <span class="serv-num">02</span>
+          <h2 class="serv-desc-title">Massagens <em>Terapêuticas</em></h2>
+          <p class="serv-desc-text">Sessões que vão além do relaxamento. Técnicas terapêuticas e modeladoras que aliviam
+            dores, reduzem medidas e devolvem a leveza ao seu corpo com resultados comprovados.</p>
+          <ul class="serv-desc-list">
+            <li><i class="fa-solid fa-check"></i> Massagem terapêutica</li>
+            <li><i class="fa-solid fa-check"></i> Modeladora corporal</li>
+            <li><i class="fa-solid fa-check"></i> Drenagem linfática</li>
+          </ul>
+          <a href="https://wa.me/5562996082008?text=Olá!%20Gostaria%20de%20agendar%20uma%20Massagem."
+            class="btn-primary serv-agendar" target="_blank" rel="noopener">
+            <i class="fa-solid fa-calendar-check"></i> Agendar Horário
+          </a>
+        </div>
+      </div>
+
+      <!-- Lado direito — Card carousel -->
+      <div class="serv-card-area">
+        <div class="serv-card-carousel">
+          <div class="serv-carousel-card active" data-card="0">
+            <div class="serv-carousel-card-img">
+              <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=500&h=650&fit=crop&q=80"
+                alt="Estética Facial" width="500" height="650">
+            </div>
+            <div class="serv-carousel-card-label">
+              <i class="fa-solid fa-face-smile-beam"></i>
+              <span>Estética Facial</span>
+            </div>
+          </div>
+          <div class="serv-carousel-card" data-card="1">
+            <div class="serv-carousel-card-img">
+              <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=500&h=650&fit=crop&q=80"
+                alt="Massagens" width="500" height="650">
+            </div>
+            <div class="serv-carousel-card-label">
+              <i class="fa-solid fa-hands"></i>
+              <span>Massagens</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles -->
+        <div class="serv-carousel-controls">
+          <button class="serv-ctrl-btn" id="servPrev" aria-label="Anterior">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div class="serv-carousel-dots" id="servDots">
+            <span class="serv-dot active"></span>
+            <span class="serv-dot"></span>
+          </div>
+          <button class="serv-ctrl-btn" id="servNext" aria-label="Próximo">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <!-- ═══ Shape Divider: Serviços → Resultados (Organic Asymmetric) ═══ -->
+    <div class="divider divider-serv-result">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,120 C320,120 420,0 720,0 C1020,0 1120,120 1440,120 Z" fill="rgba(242, 222, 199, 0.5)" />
+        <path d="M0,120 C380,120 520,30 820,30 C1120,30 1220,120 1440,120 Z" fill="rgba(242, 222, 199, 0.8)" />
+        <path d="M0,120 C420,120 620,50 920,50 C1220,50 1320,120 1440,120 Z" fill="#F2DEC7" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO RESULTADOS — MURAL INTERATIVO ========== -->
+  <section class="resultados" id="resultados">
+
+    <div class="resultados-header" data-aos="fade-up">
+      <span class="section-badge"><i class="fa-solid fa-camera-retro"></i> Resultados Reais</span>
+      <h2 class="section-title">Nossas <em>Transformações</em></h2>
+      <p class="section-subtitle">Cada foto conta uma história de cuidado e confiança. Clique para ver os detalhes.</p>
+    </div>
+
+    <div class="mural-container" id="muralContainer">
+
+      <!-- Par 1 — Antes/Depois -->
+      <div class="mural-item mural-pair" data-tipo="par" style="--x:3%; --y:5%; --rot:-7deg;" data-aos="zoom-in"
+        data-aos-delay="50">
+        <div class="mural-images">
+          <div class="img-wrap"><img src="imagens/a1.webp" alt="Antes - Massagem Modeladora" loading="lazy"><span
+              class="mural-tag">Antes</span></div>
+          <div class="img-wrap"><img src="imagens/d1.webp" alt="Depois - Massagem Modeladora" loading="lazy"><span
+              class="mural-tag depois">Depois</span></div>
+        </div>
+        <div class="mural-info">
+          <span class="mural-servico">Massagem Modeladora</span>
+          <h3>Redução de Medidas</h3>
+          <p>Movimentos firmes e precisos que remodelam o contorno corporal com resultados visíveis já nas primeiras
+            sessões.</p>
+        </div>
+      </div>
+
+      <!-- Par 2 — Antes/Depois -->
+      <div class="mural-item mural-pair" data-tipo="par" style="--x:60%; --y:2%; --rot:5deg;" data-aos="zoom-in"
+        data-aos-delay="150">
+        <div class="mural-images">
+          <div class="img-wrap"><img src="imagens/a2.webp" alt="Antes - Drenagem Linfática" loading="lazy"><span
+              class="mural-tag">Antes</span></div>
+          <div class="img-wrap"><img src="imagens/d2.webp" alt="Depois - Drenagem Linfática" loading="lazy"><span
+              class="mural-tag depois">Depois</span></div>
+        </div>
+        <div class="mural-info">
+          <span class="mural-servico">Drenagem Linfática</span>
+          <h3>Desinchamento Corporal</h3>
+          <p>Técnica que elimina toxinas e melhora a circulação, trazendo definição e leveza ao corpo.</p>
+        </div>
+      </div>
+
+      <!-- Par 3 — Antes/Depois -->
+      <div class="mural-item mural-pair" data-tipo="par" style="--x:30%; --y:52%; --rot:-4deg;" data-aos="zoom-in"
+        data-aos-delay="250">
+        <div class="mural-images">
+          <div class="img-wrap"><img src="imagens/a3.webp" alt="Antes - Estética Facial" loading="lazy"><span
+              class="mural-tag">Antes</span></div>
+          <div class="img-wrap"><img src="imagens/d3.webp" alt="Depois - Estética Facial" loading="lazy"><span
+              class="mural-tag depois">Depois</span></div>
+        </div>
+        <div class="mural-info">
+          <span class="mural-servico">Drenagem Linfática</span>
+          <h3>Desinchamento Abdominal</h3>
+          <p>Promove o alívio do inchaço, melhora a circulação sanguínea e auxilia na eliminação de toxinas.</p>
+        </div>
+      </div>
+
+      <!-- Solo — C (Clínica/Ambiente) -->
+      <div class="mural-item mural-solo" data-tipo="solo" style="--x:70%; --y:48%; --rot:8deg;" data-aos="zoom-in"
+        data-aos-delay="350">
+        <div class="mural-images">
+          <div class="img-wrap"><img src="imagens/c.webp" alt="Nosso Espaço" loading="lazy"></div>
+        </div>
+        <div class="mural-info">
+          <span class="mural-servico">Massagem Terapêutica</span>
+          <h3>Relaxamento Profundo</h3>
+          <p>Técnica que alivia tensões musculares, reduz o estresse e promove uma sensação de bem-estar.</p>
+        </div>
+      </div>
+
+      <!-- Solo — R (Resultado/Procedimento) -->
+      <div class="mural-item mural-solo" data-tipo="solo" style="--x:5%; --y:55%; --rot:-10deg;" data-aos="zoom-in"
+        data-aos-delay="400">
+        <div class="mural-images">
+          <div class="img-wrap"><img src="imagens/r.webp" alt="Resultado Real" loading="lazy"></div>
+        </div>
+        <div class="mural-info">
+          <span class="mural-servico">Clareamento Facial</span>
+          <h3>Pele Luminosa</h3>
+          <p>Clareamento seguro e eficaz, que uniformiza o tom da pele e devolve a luminosidade natural.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA final -->
+    <div class="resultados-cta" data-aos="fade-up" data-aos-delay="500">
+      <p>Pronta para a sua transformação?</p>
+      <a href="https://wa.me/5562996082008?text=Olá!%20Vi%20os%20resultados%20no%20site%20e%20quero%20agendar!"
+        class="btn-primary" target="_blank" rel="noopener">
+        <i class="fa-solid fa-calendar-check"></i> Quero Começar Agora
+      </a>
+    </div>
+
+    <!-- ═══ Shape Divider: Resultados → Sobre (Diagonal Reverse) ═══ -->
+    <div class="divider divider-result-sobre">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M1440,120 L0,0 L0,120 Z" fill="rgba(255, 251, 247, 0.4)" />
+        <path d="M1440,120 L0,30 L0,120 Z" fill="rgba(255, 251, 247, 0.7)" />
+        <path d="M1440,120 L0,60 L0,120 Z" fill="#FFFBF7" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO QUEM SOU ========== -->
+  <section class="sobre" id="sobre">
+
+    <!-- Orbes decorativos -->
+    <div class="sobre-orb sobre-orb--1"></div>
+    <div class="sobre-orb sobre-orb--2"></div>
+
+    <div class="sobre-wrapper">
+
+      <!-- Header da seção -->
+      <div class="sobre-header" data-aos="fade-up">
+        <span class="section-badge"><i class="fa-solid fa-heart"></i> Quem Sou</span>
+        <h2 class="section-title">Conheça a <em>Luciane</em></h2>
+        <!-- Logo de destaque -->
+        <div class="sobre-logo" data-aos="zoom-in" data-aos-delay="200">
+          <img src="logo.webp" alt="Logo Studio D'LÚ" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Layout principal -->
+      <div class="sobre-grid">
+
+        <!-- Galeria de fotos escalonada -->
+        <div class="sobre-gallery" data-aos="fade-right" data-aos-delay="100">
+          <div class="gallery-col gallery-col--left">
+            <div class="gallery-card" data-aos="zoom-in" data-aos-delay="150">
+              <img src="imagens/2.webp" alt="Certificados profissionais da Luciane" loading="lazy">
+              <div class="gallery-card-label"><i class="fa-solid fa-award"></i> Certificações</div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in" data-aos-delay="300">
+              <img src="imagens/1.webp" alt="Equipamento LipoFocus profissional" loading="lazy">
+              <div class="gallery-card-label"><i class="fa-solid fa-microscope"></i> Tecnologia</div>
+            </div>
+          </div>
+          <div class="gallery-col gallery-col--right">
+            <div class="gallery-card" data-aos="zoom-in" data-aos-delay="200">
+              <img src="imagens/4.webp" alt="Sala de atendimento" loading="lazy">
+              <div class="gallery-card-label"><i class="fa-solid fa-couch"></i> Ambiente</div>
+            </div>
+            <div class="gallery-card" data-aos="zoom-in" data-aos-delay="350">
+              <img src="imagens/3.webp" alt="Maca e ambiente acolhedor" loading="lazy">
+              <div class="gallery-card-label"><i class="fa-solid fa-spa"></i> Conforto</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conteúdo textual -->
+        <div class="sobre-info" data-aos="fade-left" data-aos-delay="200">
+
+          <div class="sobre-glass">
+            <h3 class="sobre-name">Luciane</h3>
+            <span class="sobre-role">Esteticista • Especialista em Pós-operatório</span>
+
+            <p class="sobre-bio">
+              Com mais de <strong>15 anos de dedicação</strong> à beleza e ao bem-estar, sou formada e especialista em
+              <strong>pós-operatório de cirurgias plásticas</strong>. Possuo diversos certificados nas áreas de massagem
+              terapêutica, modeladora, drenagem linfática e estética facial avançada.
+            </p>
+            <p class="sobre-bio">
+              No <strong>Studio D'LÚ</strong>, em <strong>Goiânia</strong>, ofereço um atendimento humanizado e
+              personalizado. Cada corpo conta uma história — e merece ser cuidado com carinho, técnica e respeito.
+            </p>
+
+            <!-- Localização -->
+            <div class="sobre-location">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong>Goiânia, GO</strong>
+                <span>Atendemos a todos que buscam cuidado e transformação</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div class="sobre-stats">
+            <div class="sobre-stat" data-aos="fade-up" data-aos-delay="300">
+              <div class="sobre-stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+              <span class="sobre-stat-num">+15</span>
+              <span class="sobre-stat-label">Anos de Experiência</span>
+            </div>
+            <div class="sobre-stat" data-aos="fade-up" data-aos-delay="400">
+              <div class="sobre-stat-icon"><i class="fa-solid fa-users"></i></div>
+              <span class="sobre-stat-num">+200</span>
+              <span class="sobre-stat-label">Clientes Atendidas</span>
+            </div>
+            <div class="sobre-stat" data-aos="fade-up" data-aos-delay="500">
+              <div class="sobre-stat-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+              <span class="sobre-stat-num">100%</span>
+              <span class="sobre-stat-label">Comprometimento</span>
+            </div>
+          </div>
+
+          <a href="https://wa.me/5562996082008?text=Olá%20Luciane!%20Vim%20pelo%20site%20e%20gostaria%20de%20conhecer%20o%20Studio."
+            class="btn-primary sobre-cta" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="600">
+            <i class="fa-solid fa-comment-dots"></i> Fale com a Luciane
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══ Shape Divider: Sobre → Contato (Fluid Wave) ═══ -->
+    <div class="divider divider-sobre-contato">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,60 C480,180 960,-60 1440,60 L1440,120 L0,120 Z" fill="rgba(225, 184, 162, 0.4)" />
+        <path d="M0,75 C480,195 960,-45 1440,75 L1440,120 L0,120 Z" fill="rgba(225, 184, 162, 0.7)" />
+        <path d="M0,90 C480,210 960,-30 1440,90 L1440,120 L0,120 Z" fill="#E1B8A2" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO CTA & CONTATO ========== -->
+  <section class="contato" id="contato">
+    <div class="contato-bg-glow"></div>
+    <div class="contato-container">
+
+      <!-- Cabeçalho do Contato -->
+      <div class="contato-header" data-aos="fade-up">
+        <span class="section-badge"><i class="fa-solid fa-sparkles"></i> Dê o Primeiro Passo</span>
+        <h2 class="section-title">Venha Transformar <em>Sua Beleza</em></h2>
+        <p class="contato-subtitle">Agende seu horário, tire suas dúvidas ou venha nos fazer uma visita. O Studio D'LÚ
+          está de portas abertas para você.</p>
+      </div>
+
+      <div class="contato-grid">
+
+        <!-- Coluna de Ações (Botões) -->
+        <div class="contato-actions" data-aos="fade-right">
+
+          <!-- CTA WhatsApp -->
+          <a href="https://wa.me/5562996082008?text=Olá!%20Gostaria%20de%20agendar%20um%20horário." target="_blank"
+            rel="noopener" class="btn-neon btn-neon--whatsapp">
+            <div class="btn-neon-content">
+              <i class="fa-brands fa-whatsapp"></i>
+              <div class="btn-neon-text">
+                <strong>Agende pelo WhatsApp</strong>
+                <span>(62) 99608-2008</span>
+              </div>
+            </div>
+            <div class="btn-neon-glow"></div>
+          </a>
+
+          <!-- CTA Instagram -->
+          <a href="https://www.instagram.com/studiodlu_/" target="_blank" rel="noopener"
+            class="btn-neon btn-neon--instagram">
+            <div class="btn-neon-content">
+              <i class="fa-brands fa-instagram"></i>
+              <div class="btn-neon-text">
+                <strong>Siga nosso Instagram</strong>
+                <span>Venha conhecer mais</span>
+              </div>
+            </div>
+            <div class="btn-neon-glow"></div>
+          </a>
+
+          <!-- Info extra -->
+          <div class="contato-info-card">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+              <h4>Horário de Atendimento</h4>
+              <p>Segunda a Sexta: 07h às 16h<br>Sábados: 07h às 12h</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Coluna do Maps -->
+        <div class="contato-map" data-aos="fade-left">
+          <div class="map-wrapper">
+            <!-- Iframe apontando para o endereço/coordenadas do Studio D'Lú -->
+            <iframe
+              src="https://maps.google.com/maps?q=StudioDLu,+-16.7001338,-49.3130713&t=&z=17&ie=UTF8&iwloc=&output=embed"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="map-overlay">
+              <div class="map-pin">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Goiânia, GO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="logo.webp" alt="Studio D'LÚ Logo" class="footer-logo">
+        <p>Especialistas em realçar sua beleza natural com cuidado, tecnologia e acolhimento.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="tratamentos.html">Tratamentos</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="resultados.html">Resultados</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Redes Sociais</h4>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/studiodlu_/" target="_blank" rel="noopener" aria-label="Instagram"><i
+              class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://wa.me/5562996082008" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+              class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 Studio D'LÚ. Todos os direitos reservados.</p>
+      <p class="footer-credit">Desenvolvido com <i class="fa-solid fa-heart" style="color: var(--rose-terracotta);"></i>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ========== NOVO WHATSAPP FLOATING BUTTON ========== -->
+  <a href="https://wa.me/5562996082008?text=Olá!%20Gostaria%20de%20agendar%20um%20horário."
+    class="whatsapp-cream" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- AOS -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function() {
+      if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 800, once: true, offset: 100 });
+      }
+    });
+  </script>
+
+  <!-- Main Script -->
+  <script defer src="script.js"></script>
+</body>
+
+</html>
