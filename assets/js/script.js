@@ -166,41 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* --- Mural Interativo (Resultados) --- */
-  const muralItems = document.querySelectorAll('.mural-item');
-  let activeMural = null;
-
-  function closeMural() {
-    if (activeMural) {
-      activeMural.classList.remove('active');
-      activeMural = null;
-      document.body.style.overflow = '';
-    }
-  }
-
-  muralItems.forEach(item => {
-    item.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (activeMural === item) {
-        closeMural();
-        return;
-      }
-      closeMural();
-      item.classList.add('active');
-      activeMural = item;
-      document.body.style.overflow = 'hidden';
-    });
-  });
-
-  document.addEventListener('click', (e) => {
-    if (activeMural && !activeMural.contains(e.target)) {
-      closeMural();
-    }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMural();
-  });
+  /* --- Mural Interativo Removido --- */
 
   /* --- Services Fullscreen Carousel --- */
   const servBgs = document.querySelectorAll('.serv-bg');

@@ -238,8 +238,8 @@ img {
   font-size: 0.82rem !important;
   letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
-  color: var(--white) !important;
-  background: linear-gradient(135deg, var(--olive-dark), #7d7f52);
+  color: var(--olive-dark) !important;
+  background: var(--cream) !important;
   padding: 0.65rem 1.6rem !important;
   border-radius: 50px;
   border: none;
@@ -254,8 +254,8 @@ img {
 
 .nav-cta:hover {
   transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 8px 30px rgba(107, 109, 67, 0.5);
-  color: var(--white) !important;
+  box-shadow: 0 8px 30px rgba(242, 222, 199, 0.5);
+  color: var(--olive-dark) !important;
 }
 
 /* Hamburger */
@@ -1595,7 +1595,6 @@ section {
   top: var(--y);
   transform: rotate(var(--rot)) scale(1);
   transition: opacity 0.65s cubic-bezier(0.23, 1, 0.32, 1), transform 0.65s cubic-bezier(0.23, 1, 0.32, 1), background-color 0.65s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.65s cubic-bezier(0.23, 1, 0.32, 1);
-  cursor: pointer;
   z-index: 1;
   border-radius: 16px;
   overflow: visible;
@@ -1657,9 +1656,6 @@ section {
 .mural-item:hover {
   z-index: 10;
   animation-play-state: paused;
-  box-shadow:
-    0 20px 50px rgba(44, 42, 38, 0.22),
-    0 6px 18px rgba(44, 42, 38, 0.12);
 }
 
 /* Sombra de fundo para aspecto "polaroid" */
@@ -1668,21 +1664,6 @@ section {
   overflow: hidden;
 }
 
-/* --- Click: centralizar e expandir --- */
-.mural-item.active {
-  position: fixed;
-  left: 50% !important;
-  top: 50% !important;
-  transform: translate(-50%, -50%) rotate(0deg) scale(1) !important;
-  z-index: 1000;
-  width: 720px;
-  border-radius: 24px;
-  box-shadow:
-    0 40px 100px rgba(44, 42, 38, 0.3),
-    0 0 0 9999px rgba(44, 42, 38, 0.45);
-  border-color: var(--white);
-  animation: none;
-}
 
 /* --- Imagens --- */
 .mural-images {
@@ -1692,9 +1673,6 @@ section {
   overflow: hidden;
 }
 
-.mural-item.active .mural-images {
-  height: 400px;
-}
 
 .img-wrap {
   position: relative;
@@ -1709,9 +1687,6 @@ section {
   transition: transform 0.6s var(--transition-smooth);
 }
 
-.mural-item.active .img-wrap img {
-  transform: scale(1.04);
-}
 
 /* --- Tags Antes/Depois --- */
 .mural-tag {
@@ -1738,18 +1713,9 @@ section {
 
 /* --- Info / Detalhes (só visível quando ativo) --- */
 .mural-info {
-  padding: 0;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.1s, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.1s, background-color 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.1s, box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.1s;
+  display: none;
 }
 
-.mural-item.active .mural-info {
-  padding: 22px 26px 26px;
-  max-height: 300px;
-  opacity: 1;
-}
 
 .mural-servico {
   display: inline-block;
@@ -2497,6 +2463,11 @@ section {
 
 @media (max-width: 992px) {
 
+  /* --- Hero Overlay Mobile --- */
+  .hero-overlay {
+    background: rgba(255, 255, 255, 0.4);
+  }
+
   /* --- Navbar Mobile --- */
   .nav-hamburger {
     display: flex;
@@ -2610,22 +2581,10 @@ section {
     position: relative !important;
     left: auto !important;
     top: auto !important;
-    transform: rotate(var(--rot)) !important;
+    transform: none !important;
     width: 90% !important;
     max-width: 420px;
     animation: none !important;
-  }
-
-  .mural-item.active {
-    position: fixed !important;
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) rotate(0deg) scale(1) !important;
-    width: 95vw !important;
-    max-width: 600px;
-    box-shadow:
-      0 40px 100px rgba(44, 42, 38, 0.3),
-      0 0 0 9999px rgba(44, 42, 38, 0.45);
   }
 
   /* Sobre */
@@ -2712,10 +2671,6 @@ section {
     height: 240px;
   }
 
-  .mural-item.active .mural-images {
-    height: 260px;
-  }
-
   .mural-info h3 {
     font-size: 1.5rem;
   }
@@ -2793,5 +2748,182 @@ section {
 
   .footer-logo {
     height: 55px;
+  }
+}
+
+/* --- Desktop/Mobile Hero Toggles Globals --- */
+.hero-content-mobile {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .hero-content-desktop {
+    display: none !important;
+  }
+  .hero-content-mobile {
+    display: block !important;
+  }
+  
+  /* Mobile Hero Styling */
+  .hero-glass {
+    padding: 2rem 1.5rem !important;
+    border-radius: 24px !important;
+    text-align: center;
+  }
+  
+  .hero-mobile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  
+  .hero-mobile-badge {
+    background: rgba(207, 125, 101, 0.1);
+    color: var(--rose-terracotta);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid rgba(207, 125, 101, 0.3);
+  }
+  
+  .hero-mobile-title {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    color: var(--dark);
+    line-height: 1.05;
+  }
+  
+  .hero-mobile-title span {
+    display: block;
+    color: var(--olive-dark);
+    font-style: italic;
+    font-weight: 600;
+  }
+  
+  .hero-mobile-desc {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--dark-soft);
+    line-height: 1.6;
+    padding: 0 5px;
+  }
+  
+  .hero-mobile-cards {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  
+  .hm-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(107, 109, 67, 0.2);
+    padding: 14px 8px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    color: var(--olive-dark);
+    font-weight: 600;
+    font-size: 0.8rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  }
+  
+  .hm-card i {
+    font-size: 1.4rem;
+    color: var(--rose-terracotta);
+  }
+  
+  .hero-mobile-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .hm-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    box-shadow: 0 8px 20px rgba(107, 109, 67, 0.2);
+  }
+  
+  .hm-link {
+    color: var(--olive-dark);
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--olive-dark);
+    padding-bottom: 2px;
+  }
+}
+
+/* --- Instagram Navbar Buttons --- */
+.nav-instagram-btn {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: white !important;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+}
+
+.nav-instagram-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 39, 67, 0.4);
+}
+
+.nav-mobile-right {
+  display: none;
+}
+
+.nav-instagram-mobile {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .nav-mobile-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav-ig-desk-item {
+    display: none !important;
+  }
+
+  .nav-instagram-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white !important;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-instagram-mobile:hover {
+    transform: scale(1.1);
   }
 }
