@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://studiodlu.com.br/sitemap.xml
+Sitemap: https://studiodlu.com/sitemap.xml
 
 User-agent: Googlebot
 Allow: /
