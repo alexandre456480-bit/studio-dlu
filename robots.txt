@@ -6,7 +6,7 @@ User-agent: Googlebot
 Allow: /
 
 User-agent: Googlebot-Image
-Allow: /imagens/
-Allow: /hero/
-Allow: /logo.webp
-Allow: /logo2.webp
+Allow: /assets/images/imagens/
+Allow: /assets/images/hero/
+Allow: /assets/images/logo.webp
+Allow: /assets/images/logo2.webp
