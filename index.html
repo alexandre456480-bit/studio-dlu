@@ -124,20 +124,48 @@
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18055118524">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18055118524');
-</script>
-<!-- Event snippet for Contato conversion page -->
-<script>
-  gtag('event', 'conversion', {'send_to': 'AW-18055118524/V-fvCK_MxaMcELz9rKFD'});
-</script>
+  <!-- Google tag (gtag.js) - Lazy Load Inteligente para Performance Máxima -->
+  <script>
+    (function() {
+      let gtmLoaded = false;
+      
+      // Define a dataLayer e função gtag imediatamente para evitar erros se outras partes do site chamarem gtag
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function() { dataLayer.push(arguments); };
+      
+      function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+        
+        // Remove os event listeners de interação
+        triggerEvents.forEach(function(e) {
+          window.removeEventListener(e, loadGTM, { passive: true });
+        });
+        
+        // Cria dinamicamente o script principal do GTM
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=AW-18055118524";
+        document.head.appendChild(script);
+        
+        // Executa as configurações originais após o script carregar
+        script.onload = function() {
+          gtag('js', new Date());
+          gtag('config', 'AW-18055118524');
+          gtag('event', 'conversion', {'send_to': 'AW-18055118524/V-fvCK_MxaMcELz9rKFD'});
+        };
+      }
+      
+      // Lista de eventos de interação para trigger imediato
+      const triggerEvents = ['scroll', 'click', 'mousemove', 'touchstart'];
+      triggerEvents.forEach(function(e) {
+        window.addEventListener(e, loadGTM, { passive: true });
+      });
+      
+      // Fallback: Carrega após 3.5 segundos se nenhuma interação ocorrer
+      setTimeout(loadGTM, 3500);
+    })();
+  </script>
 </head>
 
 <body>
@@ -257,7 +285,7 @@
             <span class="hero-mobile-badge">
               <i class="fa-solid fa-sparkles"></i> Sua Melhor Versão
             </span>
-            <h1 class="hero-mobile-title">Realce sua <span>Beleza Natural</span></h1>
+            <h2 class="hero-mobile-title">Realce sua <span>Beleza Natural</span></h2>
             <p class="hero-mobile-desc">Especialistas em estética avançada e pós-operatório em Goiânia. Protocolos que elevam sua autoestima e proporcionam resultados reais.</p>
           </div>
           
@@ -307,12 +335,22 @@
     <!-- Backgrounds fullscreen (1 por serviço) -->
     <div class="serv-backgrounds">
       <div class="serv-bg active" data-bg="0">
-        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1920&h=1080&fit=crop&q=80"
-          alt="Estética Facial ambiente" width="1920" height="1080">
+        <picture>
+          <source media="(max-width: 480px)" srcset="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=480&h=480&fit=crop&q=60">
+          <source media="(max-width: 768px)" srcset="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=768&h=768&fit=crop&q=60">
+          <source media="(max-width: 1200px)" srcset="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&h=800&fit=crop&q=70">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1600&h=900&fit=crop&q=75"
+               alt="Estética Facial ambiente" width="1600" height="900" loading="lazy" decoding="async">
+        </picture>
       </div>
       <div class="serv-bg" data-bg="1">
-        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&h=1080&fit=crop&q=80"
-          alt="Massagens ambiente" width="1920" height="1080">
+        <picture>
+          <source media="(max-width: 480px)" srcset="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=480&h=480&fit=crop&q=60">
+          <source media="(max-width: 768px)" srcset="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=768&h=768&fit=crop&q=60">
+          <source media="(max-width: 1200px)" srcset="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&h=800&fit=crop&q=70">
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1600&h=900&fit=crop&q=75"
+               alt="Massagens ambiente" width="1600" height="900" loading="lazy" decoding="async">
+        </picture>
       </div>
       <div class="serv-bg-overlay"></div>
     </div>
@@ -357,8 +395,12 @@
         <div class="serv-card-carousel">
           <div class="serv-carousel-card active" data-card="0">
             <div class="serv-carousel-card-img">
-              <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=500&h=650&fit=crop&q=80"
-                alt="Estética Facial" width="500" height="650">
+              <picture>
+                <source media="(max-width: 480px)" srcset="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=350&h=455&fit=crop&q=60">
+                <source media="(max-width: 768px)" srcset="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=450&h=585&fit=crop&q=65">
+                <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=500&h=650&fit=crop&q=70"
+                     alt="Estética Facial" width="500" height="650" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="serv-carousel-card-label">
               <i class="fa-solid fa-face-smile-beam"></i>
@@ -367,8 +409,12 @@
           </div>
           <div class="serv-carousel-card" data-card="1">
             <div class="serv-carousel-card-img">
-              <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=500&h=650&fit=crop&q=80"
-                alt="Massagens" width="500" height="650">
+              <picture>
+                <source media="(max-width: 480px)" srcset="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=350&h=455&fit=crop&q=60">
+                <source media="(max-width: 768px)" srcset="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=450&h=585&fit=crop&q=65">
+                <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=500&h=650&fit=crop&q=70"
+                     alt="Massagens" width="500" height="650" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="serv-carousel-card-label">
               <i class="fa-solid fa-hands"></i>
@@ -663,11 +709,10 @@ Acreditamos que cada corpo conta uma história — e merece um cuidado profissio
             <div class="btn-neon-glow"></div>
           </a>
 
-          <!-- Info extra -->
           <div class="contato-info-card">
             <i class="fa-solid fa-clock"></i>
             <div>
-              <h4>Horário de Atendimento</h4>
+              <h3>Horário de Atendimento</h3>
               <p>Somente com horário marcado<br>Segunda a Sexta: 09h às 19h<br>Sábados: 09h às 16h</p>
             </div>
           </div>
@@ -681,7 +726,8 @@ Acreditamos que cada corpo conta uma história — e merece um cuidado profissio
             <iframe
               src="https://maps.google.com/maps?q=StudioDLu,+-16.7001338,-49.3130713&t=&z=17&ie=UTF8&iwloc=&output=embed"
               width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Localização do StudioDlu no Google Maps">
             </iframe>
             <div class="map-overlay">
               <div class="map-pin">
@@ -706,7 +752,7 @@ Acreditamos que cada corpo conta uma história — e merece um cuidado profissio
       </div>
 
       <div class="footer-links">
-        <h4>Navegação</h4>
+        <h3>Navegação</h3>
         <ul>
           <li><a href="index.html">Início</a></li>
           <li><a href="tratamentos.html">Tratamentos</a></li>
@@ -716,7 +762,7 @@ Acreditamos que cada corpo conta uma história — e merece um cuidado profissio
       </div>
 
       <div class="footer-social">
-        <h4>Redes Sociais</h4>
+        <h3>Redes Sociais</h3>
         <div class="social-icons">
           <a href="https://www.instagram.com/studiodlu_/" target="_blank" rel="noopener" aria-label="Instagram"><i
               class="fa-brands fa-instagram"></i></a>

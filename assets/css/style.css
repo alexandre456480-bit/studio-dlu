@@ -2,8 +2,7 @@
    STUDIO D'LÚ - Design System & Styles
    ============================================ */
 
-/* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap');
+/* --- Google Fonts (carregadas de forma assíncrona no HTML) --- */
 
 /* --- CSS Variables (Paleta) --- */
 :root {
@@ -542,10 +541,12 @@ section {
   left: 0;
   top: 0;
   height: 100%;
-  width: 0;
+  width: 100%;
   background: var(--rose-terracotta);
   border-radius: 3px;
-  transition: width 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+  will-change: transform;
 }
 
 .hero-indicator.active {
@@ -559,11 +560,11 @@ section {
 
 @keyframes indicatorProgress {
   0% {
-    width: 0;
+    transform: scaleX(0);
   }
 
   100% {
-    width: 100%;
+    transform: scaleX(1);
   }
 }
 
@@ -2302,7 +2303,7 @@ section {
   margin-top: 2px;
 }
 
-.contato-info-card h4 {
+.contato-info-card h3 {
   font-family: var(--font-body);
   color: var(--dark);
   font-size: 0.95rem;
@@ -2404,8 +2405,8 @@ section {
   max-width: 320px;
 }
 
-.footer-links h4,
-.footer-social h4 {
+.footer-links h3,
+.footer-social h3 {
   color: var(--white);
   font-size: 1.15rem;
   margin-bottom: 1.5rem;
@@ -2927,4 +2928,42 @@ section {
   .nav-instagram-mobile:hover {
     transform: scale(1.1);
   }
+}
+
+/* ============================================
+   PERFORMANCE: Desabilitar animações pesadas no mobile
+   ============================================ */
+@media (max-width: 768px) {
+  /* Desativar orbs flutuantes no mobile — alto custo de GPU com blur(80px) */
+  .floating-orb {
+    display: none;
+  }
+
+  /* Desativar animação infinita de box-shadow no btn-primary */
+  .btn-primary {
+    animation: none;
+  }
+
+  /* Desativar o shimmer sweep no btn-primary */
+  .btn-primary::before {
+    animation: none;
+    display: none;
+  }
+
+  /* Desativar glow contínuo dos botões neon de contato */
+  .btn-neon-glow {
+    display: none;
+  }
+
+  /* Remover background de noise que gera repaint global */
+  .ambient-noise {
+    display: none;
+  }
+}
+
+/* ============================================
+   ACESSIBILIDADE: Contraste do botão nav-cta
+   ============================================ */
+.nav-cta {
+  color: var(--dark) !important;
 }
